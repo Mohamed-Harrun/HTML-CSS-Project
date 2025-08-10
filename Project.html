@@ -1,0 +1,257 @@
+<!-- 
+ Media Queries      --Tell the browser how to style an element at particular viewport dimensions.
+ Viewport Meta tag  --Tells the browser what width the viewport should be.
+ Responsive Design  --Only load smaller images for mobile devices.
+-->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <style>
+            body, ul, li, h1, h2,a{
+                                margin: 0;
+                                padding:0 ;
+                                font-family: arial;
+                                    }
+
+                            header{
+                                background-color: #f63232;
+                                padding: 20px;
+                                text-align: center;
+                                position: fixed;
+                                width: 100%;
+                                z-index: 1;
+                                top: 0;
+                                left: 0;
+                            }
+                            header h1{
+                                color: white;
+                                border: 8px solid white;
+                                padding: 6px;
+                                display: inline-block;
+                                border-radius: 36px;
+                            }
+                            .banner{
+                                position: relative;
+                            }
+                            .banner img{
+                                max-width: 100%;
+                            }
+                            .banner .welcome{
+                                position: absolute;
+                                background-color: #FEB614;
+                                top: 30%;
+                                left: 0px;
+                                padding: 30px;
+                            } 
+                            .banner h2{
+                                font-size: 74px;
+                            }
+                            .banner h2 span{
+                                font-size: 1.3em;
+                            }
+                            nav{
+                                background-color: #f4f4f4;
+                                padding: 20px;
+                                position: sticky;
+                                top: 105px;
+                            }
+                            nav ul{
+                                white-space: nowrap;
+                                max-width: 1200px;
+                                margin: 0 auto;
+                            }
+                            nav li{
+                                width: 25%;
+                                display: inline-block;
+                                font-size: 24px;
+                            }
+                            nav li a{
+                                text-decoration: none;
+                                color: #4b4b4b;
+                            }
+                            nav li a.join{
+                                color:#f63232;
+                            }
+                            main{
+                                max-width: 100%;
+                                width: 1200px;
+                                margin: 80px auto;
+                                padding: 0 40px;
+                                box-sizing: border-box;
+                            }
+                            article h2{
+                                color: #f63232;
+                                font-size: 48px;
+                            }
+                            article p{
+                                line-height: 2em;
+                                color: #4b4b4b;
+                            }
+                            .images{
+                                text-align: center;
+                                margin: 80px 0;
+                                white-space: nowrap;
+                            }
+                            .images li{
+                                display: inline-block;
+                                width: 40%;
+                                margin: 20px 5%;
+                            }
+                            .images li img{
+                                max-width: 100%;
+                            }
+                            .joinn{
+                                background-color: #f4f4f4;
+                                text-align: center;
+                                padding: 60px 20px;
+                                color: #4b4b4b;
+                            }
+                            .join h2{
+                                font-size: 36px;
+                            }
+                            form input{
+                                margin: 20px;
+                                padding: 10px 20px;
+                                font-size: 24px;
+                                border-radius: 28px;
+                                border: 4px white;
+                            }
+                            footer{
+                                background-color: #f63232;
+                                color: white;
+                                padding: 10px;
+                                text-align: center;
+                            }
+                            /* PSEUDO CLASSES */
+
+                            nav li a:hover{
+                                text-decoration: underline;
+                            }
+
+                            .images li:hover{
+                                position: relative;
+                                top: -4px;
+                            }
+
+                            form input:focus{
+                                border: 4px dashed #4b4b4b;
+                                outline: none;
+                            }
+
+                            form input:valid{
+                                border: 4px solid #71d300;
+                            }
+
+
+                            /* PSEUDO ELEMENTS */
+
+                            article p::first-line{
+                                font-weight: bold;
+                                font-size: 1.2em;
+                            }
+
+                            section.joinn p::first-letter{
+                                font-size: 1.5em;
+                            }
+
+                            section.joinn p::selection{
+                                background-color: red;
+                            }
+
+                            p::after{
+                                content: "...";
+                            }
+                            @media screen and (max-width: 1400px) {
+                                .banner .welcome h2{
+                                font-size: 60px;
+                                }
+                            nav li{
+                                font-size: 18px !important;
+                            }               
+                            }
+                            @media screen and (max-width: 960px) {
+                                .banner .welcome h2{
+                                font-size: 40px;
+                                padding: 10px !important;
+                                }
+                            nav ul li{
+                                font-size: 14px !important;
+                            }
+                            @media screen and (max-width: 720px) {
+                            header{
+                                padding: 10px !important;
+                                font-size: 11px;
+                            }
+                            header h1{
+                                border: 5px solid white !important;
+                            }
+                            .banner .welcome {
+                                position: relative !important;
+                                text-align: center;
+                                padding: 5px !important;
+                                }
+                            .banner .welcome br{
+                                display: none;
+                                }
+                            .banner .welcome h2{
+                                font-size: 25px;
+                            }
+                            .banner .welcome span{
+                                font-size: 1em;
+                            } 
+                            nav li{
+                                font-size: 18px;
+                            }
+                            .images li{
+                                width: 100% !important;
+                                margin:  20px auto !important;
+                                display: block !important;
+                            }               
+                            }               
+                            }
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Design</title>
+        <link rel="stylesheet" href="EP-6.css">
+    </head>
+    <body>
+        <header>
+            <h1>Marioclub</h1>
+        </header>
+        <section class="banner">
+            <img src="/Img/banner.png" alt="Marioclub Image">
+            <div class="welcome">
+                <h2>Welcome to <br> <span>Marioclub</span></h2>
+            </div>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="/join.html" class="join">join the club</a></li>
+                <li><a href="/join.html">Latest news</a></li>
+                <li><a href="/join.html">New games</a></li>
+                <li><a href="/join.html">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <h2>It's a me , Mario</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores corporis voluptatum, sequi deserunt necessitatibus earum delectus? Distinctio deleniti atque voluptatum perspiciatis alias sunt accusamus, adipisci hic, odio laudantium facere tempore labore rerum optio harum! Amet illum, quo qui libero accusantium aut laudantium harum quos! Velit, inventore error rem at voluptate repudiandae ex veritatis debitis sint quisquam quis. Quos adipisci laboriosam vel sunt animi sapiente labore veniam quaerat, excepturi harum! Ut facilis optio ducimus nulla nihil tempore consequuntur repellendus, aut architecto! Magni obcaecati nisi quisquam eveniet architecto necessitatibus, possimus commodi exercitationem placeat! Ab non, illo vero excepturi veritatis dolorem labore facilis?</p>
+            </article>
+            <ul class="images">
+                <li><img src="Img/thumb-1.png" alt=""></li>
+                <li><img src="Img/thumb-2.png" alt=""></li>
+            </ul>
+        </main>
+        <section class="joinn">
+            <h2>Join Today!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quod alias consequatur. Libero aperiam maxime assumenda vel hic explicabo totam fugiat nisi a voluptatum rerum natus ipsum harum necessitatibus voluptates, qui cumque placeat quibusdam distinctio reprehenderit ex aliquid, corporis porro vitae. Fuga, esse dolore? Consequuntur alias quos distinctio soluta hic nisi, fugit facere saepe assumenda, amet debitis tempora aliquid illum necessitatibus omnis. Perferendis aliquam repellendus distinctio quidem, aspernatur delectus! Unde repellendus iusto placeat assumenda soluta tempore nihil! Autem et aliquid officiis dicta dolor atque, aut illo quis aliquam labore suscipit molestiae incidunt iure iusto impedit expedita ipsa sapiente ullam? Laudantium?</p>
+            <form action="">
+                <input type="email" name="email" placeholder="Type email & hit enter" required>
+            </form>
+        </section>
+        <footer>
+            <p class="copyright">&COPY; Copyright 2019 Marioclub</p>
+        </footer>
+    </body>
+    </html>
